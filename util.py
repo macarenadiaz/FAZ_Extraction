@@ -207,7 +207,7 @@ def expand(elemento,reg,imOr,th,precision,conn):
 	for elemento in coor:
 		x = elemento[0]
 		y = elemento[1]
-		if (imOr[x,y] < th + 0.05*precision) and (reg[x,y] != 1):
+		if (x<reg.shape[0]) and (y<reg.shape[1]) and (x>0) and (y>0) and (imOr[x,y] < th + 0.05*precision) and (reg[x,y] != 1):
 			reg1[x,y] = 1
 
 	return reg1
